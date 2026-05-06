@@ -8,8 +8,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-
-  // 1. فانكشن تسجيل الدخول
+  
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -18,62 +17,77 @@ export default function LoginPage() {
     if (error) {
       alert("Error: " + error.message);
     } else {
-      router.push("/dashboard"); // التحويل للـ Dashboard بعد النجاح
+      router.push("/dashboard"); 
     }
     setLoading(false);
   };
 
-  // 2. فانكشن إنشاء حساب جديد
-// 2. فانكشن إنشاء حساب جديد
-const handleSignUp = async (e) => {
-  // بنمنع الصفحة إنها تعمل Refresh لو الفانكشن مستدعاة من Form
-  if (e && e.preventDefault) e.preventDefault(); 
+  const handleSignUp = async (e) => {
+    if (e && e.preventDefault) e.preventDefault(); 
+    const { error } = await supabase.auth.signUp({
+      email: email,
+      password: password,
+    });
 
-  const { data, error } = await supabase.auth.signUp({
-    email: email,      // تأكدي إن المتغير email فيه قيمة من الـ State
-    password: password, // تأكدي إن المتغير password فيه قيمة من الـ State
-  });
-
-  if (error) {
-    alert("Error: " + error.message);
-  } else {
-    alert("Check your email or try to login!");
-  }
-};
+    if (error) {
+      alert("Error: " + error.message);
+    } else {
+      alert("Check your email or try to login!");
+    }
+  };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-background">
-      <form onSubmit={handleLogin} className="p-8 bg-card rounded-2xl shadow-xl w-full max-w-md border border-white/10">
-        <h1 className="text-3xl font-bold text-accent-1 mb-6 text-center">Cyber Tracker</h1>
+    
+    <div className="flex items-center justify-center min-h-screen bg-[#f8fafc]">
+      {/* form */}
+      <form 
+        onSubmit={handleLogin} 
+        className="p-10 bg-white rounded-3xl shadow-xl shadow-blue-900/5 w-full max-w-md border border-gray-100"
+      >
+        <h1 className="text-4xl font-extrabold text-[#0f172a] mb-2 text-center">Cyber Tracker</h1>
+        <p className="text-gray-400 text-center mb-8 font-medium">Welcome back! Please enter your details.</p>
         
-        <div className="space-y-4">
-          <input 
-            type="email" 
-            placeholder="Email Address" 
-            required
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-3 rounded-lg bg-background border border-white/20 text-white focus:border-accent-1 outline-none"
-          />
-          <input 
-            type="password" 
-            placeholder="Password" 
-            required
-            onChange={(e) => setPassword(e.target.value)}
-            className="w-full p-3 rounded-lg bg-background border border-white/20 text-white focus:border-accent-1 outline-none"
-          />
+        <div className="space-y-5">
+          {/* frame login*/}
+          <div className="space-y-2">
+            <label className="text-sm font-semibold text-[#0f172a] ml-1">Email Address</label>
+            <input 
+              type="email" 
+              placeholder="maram@eue.edu.eg" 
+              required
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full p-4 rounded-xl bg-[#f1f5f9] border-2 border-transparent text-[#0f172a] focus:border-[#0f172a] focus:bg-white outline-none transition-all placeholder:text-gray-400"
+            />
+          </div>
+
+          {/* frame pass */}
+          <div className="space-y-2">
+            <label className="text-sm font-semibold text-[#0f172a] ml-1">Password</label>
+            <input 
+              type="password" 
+              placeholder="••••••••" 
+              required
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full p-4 rounded-xl bg-[#f1f5f9] border-2 border-transparent text-[#0f172a] focus:border-[#0f172a] focus:bg-white outline-none transition-all placeholder:text-gray-400"
+            />
+          </div>
           
           <button 
             type="submit" 
             disabled={loading}
-            className="w-full bg-accent-1 hover:bg-accent-1/80 text-white font-bold py-3 rounded-lg transition-all"
+            className="w-full bg-[#0f172a] hover:bg-[#1e293b] text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-blue-900/10 active:scale-[0.98] mt-2"
           >
             {loading ? "Processing..." : "Login to Portal"}
           </button>
         </div>
 
-        <p className="mt-6 text-center text-gray-400 text-sm">
+        <p className="mt-8 text-center text-gray-500 text-sm font-medium">
           Don't have an account?{" "}
-          <button type="button" onClick={handleSignUp} className="text-accent-1 underline">
+          <button 
+            type="button" 
+            onClick={handleSignUp} 
+            className="text-blue-600 hover:text-blue-700 font-bold underline underline-offset-4"
+          >
             Create Account
           </button>
         </p>

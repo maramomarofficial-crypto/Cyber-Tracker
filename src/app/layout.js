@@ -8,7 +8,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-white min-h-screen">
-        {/* الـ Navbar هنا هيظهر في كل الصفحات */}
+        {/* EL NAVBAR */}
         <Navbar /> 
         
         <main>

@@ -10,10 +10,10 @@ export default function StudyPlanPage() {
   useEffect(() => {
     async function fetchStudyPlan() {
       try {
-        // نستخدم اسم الجدول بالجمع 'study_plans' زي ما هو عندك في السوبابيز
-       const { data, error } = await supabase // 1. لازم تبدأي بكلمة supabase
-      .from('study_plan')                  // 2. لازم يكون فيه نقطة قبل كلمة from
-      .select('*')                         // 3. لازم يكون فيه نقطة قبل select
+       
+       const { data, error } = await supabase 
+      .from('study_plan')                 
+      .select('*')                         
       .order('created_at', { ascending: true });
 
         if (error) throw error;
@@ -59,7 +59,7 @@ export default function StudyPlanPage() {
               className="flex items-center gap-6 p-2 pr-8 rounded-[3.5rem] transition-all hover:translate-x-2 shadow-sm"
               style={{
                 background: item.completed ? 'rgba(255, 255, 255, 0.6)' : 'rgba(255, 255, 255, 0.9)',
-                border: '1px solid rgba(255, 255, 255, 1)',
+                border: '1px solid rgb(98, 97, 97)',
                 backdropFilter: 'blur(8px)'
               }}
             >

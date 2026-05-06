@@ -3,20 +3,20 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* الباليتة الجديدة: تركيز على الأبيض والكحلي الغامق للوضوح */
+  
   --font-size: 16px;
   --bg-white: #FFFFFF;
-  --navy-dark: #0F044C; /* الكحلي الغامق جداً اللي اخترناه */
+  --navy-dark: #0F044C; 
   --navy-muted: #363062;
   --text-main: #0F044C;
-  --text-secondary: #4B5563; /* رمادي غامق واضح جداً للفقرات */
+  --text-secondary: #4B5563; 
   
-  /* المتغيرات الأساسية */
+  
   --background: var(--bg-white);
   --foreground: var(--text-main);
   
-  /* البوردر والظلال */
-  --border: #E5E7EB; /* رمادي خفيف جداً للحدود */
+  
+  --border: #393e47; 
   --radius: 2rem;
 }
 
@@ -36,22 +36,22 @@
     @apply border-border;
   }
   body {
-    /* خلفية بيضاء صريحة تماماً وكلام غامق */
+    
     @apply bg-white text-navy-dark font-sans antialiased;
   }
 
-  /* تنسيق العناوين: وزن تقيل جداً ولون غامق عشان الوضوح */
+  
   h1, h2, h3 {
     @apply tracking-tight font-black text-navy-dark;
   }
 
-  /* تنسيق الفقرات: عشان تكون واضحة ومريحة للعين */
+ 
   p {
     @apply text-text-secondary leading-relaxed font-medium;
   }
 }
 
-/* Class للـ Cards لو عايزة تستخدميه في الصفحات الفاتحة */
+
 .white-card {
   @apply bg-white border border-gray-100 shadow-sm rounded-3xl p-6;
 }

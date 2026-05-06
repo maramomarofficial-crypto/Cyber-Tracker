@@ -91,7 +91,7 @@ export default function DashboardPage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         
-        {/* العمود الشمال (الرئيسي) */}
+        {/* EL left Side F DASHBOARD */}
         <div className="lg:col-span-2 space-y-8">
           
           {/* 1. Study Progress */}
@@ -123,7 +123,7 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          {/* 2. Completed & Active Cards */}
+          {/* 2. Completed & Active */}
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-[#E2F1E7] p-8 rounded-3xl">
               <p className="text-sm font-bold text-gray-500 uppercase">Completed</p>
@@ -135,13 +135,13 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          {/* 3. Quick Note تحت الكروت */}
+          {/* 3. Quick Note */}
           <div className="mt-8">
             <QuickNote />
           </div>
         </div>
 
-        {/* العمود اليمين */}
+        {/* EL Right Side */}
         <div className="space-y-8">
           
           {/* Calendar */}
@@ -157,7 +157,7 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          {/* Countdown Timer */}
+          {/* Countdown */}
           <div className="bg-gradient-to-br from-[#0F044C] to-[#363062] p-8 rounded-3xl text-white shadow-xl">
             <h3 className="text-xs font-bold opacity-70 mb-2 uppercase">Next Certification</h3>
             <p className="text-xl font-bold mb-8">Exam Countdown</p>

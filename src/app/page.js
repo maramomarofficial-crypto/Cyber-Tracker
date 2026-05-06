@@ -6,7 +6,7 @@ export default function LandingPage() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center px-8 relative overflow-hidden" style={{ background: '#EEF1F7' }}>
       
-      {/* Background Decorative Elements */}
+      {/* Background Elements */}
       <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] rounded-full blur-[120px] opacity-20" style={{ background: '#92AAD1' }}></div>
       <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] rounded-full blur-[100px] opacity-20" style={{ background: '#C5D0E6' }}></div>
 
@@ -17,7 +17,7 @@ export default function LandingPage() {
           <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#17202D]">EUE |Project </span>
         </div>
 
-        {/* Hero Title */}
+        {/* EL Title */}
         <h1 className="text-7xl md:text-8xl font-black text-[#17202D] tracking-tighter leading-[0.9] mb-8">
           Cyber <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4C6180] to-[#92AAD1]">
@@ -42,7 +42,7 @@ export default function LandingPage() {
           </Link>
         </div>
 
-        {/* Main CTA */}
+        {/* Main  */}
         <Link href="/login">
           <button className="group relative px-12 py-5 rounded-[2rem] bg-[#17202D] text-white font-bold text-xl transition-all hover:scale-105 hover:shadow-[0_20px_40px_rgba(23,32,45,0.3)]">
             <span className="flex items-center gap-3">
@@ -52,9 +52,9 @@ export default function LandingPage() {
         </Link>
       </div>
 
-      {/* Footer Support */}
+      {/* Footer  */}
       <footer className="absolute bottom-8 text-[#6985AE] text-[10px] font-black uppercase tracking-widest">
-        Designed with Figma AI • Built with Next.js • 2026
+        Designed By Maram & Esraa
       </footer>
 
       <style jsx>{`
